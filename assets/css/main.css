@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /**
  * ===============================================================
  * Template Name    :   Myport - Personal Portfolio HTML5 Template
@@ -24,6 +25,7 @@
 * {
     margin: 0; 
     padding: 0;
+    box-sizing: border-box;
 }
 
 html {
@@ -48,6 +50,10 @@ body {
     box-sizing: border-box;
     background-color: transparent;
 }
+
+
+/*=== Overwriting Bootstrap CSS ===*/
+
 
 
 /*================================================================
@@ -90,7 +96,6 @@ p {
 a {
     font-size: 1rem;
     font-weight: 400;
-    color: #FFFFFF;
     transition: all 0.25s ease-in-out;
     -webkit-transition: all 0.25s ease-in-out;
     -moz-transition: all 0.25s ease-in-out;
@@ -111,6 +116,29 @@ address {
     font-size: 1.1rem;
     line-height: 1.6rem;
 }
+
+/* Logo */
+.logo a {
+    color: #3c3c3c;
+    font-size: 1.6rem;
+    font-weight: 400;
+}
+
+.logo a .logo-p {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #3c3c3c;
+}
+
+.logo a .dot {
+    font-size: 4rem;
+    line-height: 1rem;
+}
+
+.logo a .logo-p, .logo a .dot{
+    color: #F16856;
+}
+
 
 
 
