@@ -1,0 +1,127 @@
+/**
+ * ===============================================================
+ * Template Name    :   Myport - Personal Portfolio HTML5 Template
+ * Author           :   mahabubdev
+ * Author URI       :   https://themeforest.com/user/mahabubdev
+ * Version          :   1.0
+ * Description      :   Myport - Personal Portfolio HTML5 Template
+ * Tags             :   portfolio, personal, resume, cv, html
+ * 
+ * ====================[TABLE of CONTENT]=========================
+ * 01. Generel CSS
+ * 02. Typography CSS
+ * 03. Header CSS
+ * ===============================================================
+ */
+
+/*=== Importing Google Fonts ===*/
+@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap'); /* font-family: 'Quattrocento Sans', sans-serif; */
+
+
+/*================================================================
+========================== 01. Generel CSS =======================
+================================================================*/
+* {
+    margin: 0; 
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #EFF3F8;
+    color: #3c3c3c;
+    font-family: 'Quattrocento Sans', sans-serif;
+    font-size: 1rem;
+}
+
+.page-wrapper {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+
+/*================================================================
+========================= 02. Typography CSS =====================
+================================================================*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2.2rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.8rem;
+}
+h5 {
+    font-size: 1.7rem;
+}
+h6 {
+    font-size: 1.5rem;
+}
+
+strong, b {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+a {
+    font-size: 1rem;
+    font-weight: 400;
+    color: #FFFFFF;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+q, blockquote {
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+address {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+
+
+/*================================================================
+=========================== 03. Header CSS =======================
+================================================================*/
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.header-area nav {
+    padding: 0;
+}
