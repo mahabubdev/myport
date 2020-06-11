@@ -16,8 +16,7 @@
  */
 
 /*=== Importing Google Fonts ===*/
-@import url('https://fonts.googleapis.com/css2?family=Quattrocento+Sans:wght@400;700&display=swap'); /* font-family: 'Quattrocento Sans', sans-serif; */
-
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); /* font-family: 'Nunito', sans-serif; */
 
 /*================================================================
 ========================== 01. Generel CSS =======================
@@ -38,8 +37,13 @@ body {
     box-sizing: border-box;
     background-color: #EFF3F8;
     color: #3c3c3c;
-    font-family: 'Quattrocento Sans', sans-serif;
+    font-family: 'Nunito', sans-serif;
     font-size: 1rem;
+}
+
+::selection {
+    background-color: #F9C2BB;
+    color: #FFFFFF;
 }
 
 .page-wrapper {
@@ -55,6 +59,70 @@ img {
     max-width: 100%;
     object-fit: cover;
 }
+
+/**
+ * Theme custom CSS
+ */
+
+.btn-theme-primary {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #F16856;
+    color: #FFFFFF;
+    z-index: 1;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    border-style: none;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.btn-theme-primary::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    clear: both;
+    width: 0;
+    height: 100%;
+    background-color: #df3f3f;
+    z-index: -1;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.btn-theme-primary:hover {
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
+
+@keyframes btnhov {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.btn-theme-primary:hover::after {
+    width: 100%;
+    animation: btnhov 0.3s ease-in-out;
+    -webkit-animation: btnhov 0.3s ease-in-out;
+}
+
 
 
 /*=== Overwriting Bootstrap CSS ===*/
@@ -115,6 +183,7 @@ a:hover {
 q, blockquote {
     font-size: 1.1rem;
     font-weight: 700;
+    color: #5b5b5b;
 }
 
 address {
@@ -126,7 +195,7 @@ address {
 .logo a {
     color: #3c3c3c;
     font-size: 1.6rem;
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .logo a .logo-p {
@@ -201,8 +270,9 @@ nav .nav-wrapper {
     width: 100%;
     max-width: 100px;
     border-style: none;
-    height: auto;
-    box-shadow: 0 3px 30px 0 rgba(0,0,0,0.1);
+    height: 100px;
+    max-height: 100px;
+    box-shadow: 0 3px 30px 0 rgba(241, 104, 86, 0.3);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -216,56 +286,47 @@ nav .nav-wrapper {
     color: #3c3c3c;
 }
 
-.person a {
-    position: relative;
-    padding: 10px 20px;
-    background-color: #F16856;
-    color: #FFFFFF;
-    z-index: 1;
-    border-style: none;
-    transition: all 0.2s ease-in-out;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -ms-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-}
 
-.person a::after {
+
+.menu {
     display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    content: '';
-    clear: both;
-    width: 0;
-    height: 100%;
-    background-color: #E16946;
-    z-index: -1;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
+    padding: 0;
+    margin: 0;
 }
 
-.person a:hover {
-    color: #FFFFFF;
+.menu .nav {
+    display: flex;
+    flex-direction: column;
 }
 
-@keyframes btnhov {
-    0% {
-        width: 0;
-    }
-    100% {
-        width: 100%;
-    }
+.menu .nav li {
+    display: block;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
 }
 
-.person a:hover::after {
-    width: 100%;
-    animation: btnhov 0.3s ease-in-out;
-    -webkit-animation: btnhov 0.3s ease-in-out;
+.menu .nav li a {
+    display: block;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #3c3c3c;
+    border-left: 3px solid transparent;
+    background-color: transparent;
 }
+
+.menu .nav li:hover a {
+    border-left: 3px solid #df3f3f;
+    color: #df3f3f;
+    background-color: #ffebe8;
+}
+
+
 
 .footer {
     display: flex;
@@ -297,4 +358,44 @@ nav .nav-wrapper {
 ================================================================*/
 .page-area {
     padding-left: 320px;
+}
+
+/**
+ * Home Hero Section
+ */
+.page-area #home {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 60px;
+    z-index: 1;
+}
+
+.page-area #home::after {
+    display: flex;
+    content: 'creative';
+    clear: both;
+    z-index: -1;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    color: #8c8c8c;
+    opacity: 0.1;
+    font-size: 10rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+#home .hero-left {
+    display: flex;
+    flex-direction: column;
+}
+
+#home .hero-left .btn {
+    flex-flow: nowrap;
 }
