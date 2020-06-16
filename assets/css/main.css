@@ -1,0 +1,750 @@
+@charset "UTF-8";
+/**
+ * ===============================================================
+ * Template Name    :   Myport - Personal Portfolio HTML5 Template
+ * Author           :   mahabubdev
+ * Author URI       :   https://themeforest.com/user/mahabubdev
+ * Version          :   1.0
+ * Description      :   Myport - Personal Portfolio HTML5 Template
+ * Tags             :   portfolio, personal, resume, cv, html
+ * 
+ * ====================[TABLE of CONTENT]=========================
+ * 01. Generel CSS
+ * 02. Typography CSS
+ * 03. Header CSS
+ * ===============================================================
+ */
+
+/*=== Importing Google Fonts ===*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap'); /* font-family: 'Nunito', sans-serif; */
+
+/*================================================================
+========================== 01. Generel CSS =======================
+================================================================*/
+* {
+    margin: 0; 
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f6f6f6;
+    color: #3c3c3c;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1rem;
+    position: relative;
+}
+
+::selection {
+    background-color: #F2494F;
+    color: #FFFFFF;
+}
+
+body::-webkit-scrollbar {
+    width: 5px;
+}
+  
+body::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+}
+  
+body::-webkit-scrollbar-thumb {
+    background-color: #FF5555;
+    outline: 0;
+}
+
+.page-wrapper {
+    position: relative;
+    display: block;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: transparent;
+    overflow: hidden;
+    z-index: 1;
+}
+
+img {
+    max-width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+/**
+ * Theme custom CSS
+ */
+
+
+.cursor-eff {
+    position: absolute;
+    top: -30px;
+    left: -30px;
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgba(223, 63, 63, 0.3);
+    background-color: rgba(223, 63, 63, 0.06);
+    z-index: 9999;
+    box-shadow: 0 3px 20px 0 rgba(241, 104, 86, 0.1);
+    border-radius: 50%;
+    transition: all 0.01s ease-in-out;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    -webkit-transition: all 0.01s ease-in-out;
+    -moz-transition: all 0.01s ease-in-out;
+    -ms-transition: all 0.01s ease-in-out;
+    -o-transition: all 0.01s ease-in-out;
+}
+
+
+section {
+    padding: 100px 0 100px 60px;
+}
+
+section h2 {
+    display: inline-block;
+    position: relative;
+    text-align: left;
+    color: #F16856;
+    font-weight: 700;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+}
+
+section h2:nth-child(1)::after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    clear: both;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: -1;
+    background-color: rgba(241, 104, 86, 0.1);
+    border-radius: 40% 20% 50%;
+    -webkit-border-radius: 40% 20% 50%;
+    -moz-border-radius: 40% 20% 50%;
+    -ms-border-radius: 40% 20% 50%;
+    -o-border-radius: 40% 20% 50%;
+}
+
+section h2:nth-child(1)::before {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    clear: both;
+    left: 60px;
+    bottom: 0;
+    width: calc(100% - 60px);
+    height: 0;
+    z-index: -1;
+    border-bottom: 2px dashed rgba(241, 104, 86, 0.2);
+}
+
+.btn-theme-primary {
+    position: relative;
+    padding: 10px 20px;
+    background-color: #F16856;
+    color: #FFFFFF;
+    z-index: 1;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+    border-style: none;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.btn-theme-primary::after {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    clear: both;
+    width: 0;
+    height: 100%;
+    background-color: #F2494F;
+    z-index: -1;
+    border: none;
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}
+
+.btn-theme-primary:hover {
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
+
+@keyframes btnhov {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.btn-theme-primary:hover::after {
+    width: 100%;
+    animation: btnhov 0.3s ease-in-out;
+    -webkit-animation: btnhov 0.3s ease-in-out;
+}
+
+.btn-abt a span {
+    display: inline-block;
+    transition: all 0.1s ease-in-out;
+    animation: inf-bounce;
+    -webkit-animation: inf-bounce 1s infinite;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+}
+
+@keyframes inf-bounce {
+    0% {
+        transform: translateY(-1px);
+        -webkit-transform: translateY(-1px);
+        -moz-transform: translateY(-1px);
+        -ms-transform: translateY(-1px);
+        -o-transform: translateY(-1px);
+    }
+
+    75% {
+        transform: translateY(1px);
+        -webkit-transform: translateY(1px);
+        -moz-transform: translateY(1px);
+        -ms-transform: translateY(1px);
+        -o-transform: translateY(1px);
+    }
+
+    100% {
+        transform: translateY(0);
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
+    }
+}
+
+
+
+
+/*================================================================
+========================= 02. Typography CSS =====================
+================================================================*/
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    color: #2c2c2c;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 2.2rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.8rem;
+}
+h5 {
+    font-size: 1.7rem;
+}
+h6 {
+    font-size: 1.5rem;
+}
+
+strong, b {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+p {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+a {
+    font-size: 1rem;
+    font-weight: 400;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+q, blockquote {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #5b5b5b;
+}
+
+address {
+    font-size: 1.1rem;
+    line-height: 1.6rem;
+}
+
+/* Logo */
+.logo a {
+    color: #3c3c3c;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.logo a .logo-p {
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    color: #3c3c3c;
+}
+
+.logo a .dot {
+    font-size: 4rem;
+    line-height: 1rem;
+}
+
+.logo a .logo-p, .logo a .dot{
+    color: #F16856;
+}
+
+
+
+
+/*================================================================
+=========================== 03. Header CSS =======================
+================================================================*/
+header {
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+
+.header-area nav.nav-sidebar {
+    padding: 0;
+    width: 320px;
+    background-color: #FFFFFF;
+    position: fixed;
+    display: block;
+    content: '';
+    clear: both;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    height: 100%;
+}
+
+nav .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-wrapper .head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.head .logo {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.head .person {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+
+.person .avatar {
+    width: 100%;
+    display: block;
+    padding: 20px;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.avatar img {
+    width: 100%;
+    max-width: 100px;
+    border-style: none;
+    height: 100px;
+    max-height: 100px;
+    box-shadow: 0 3px 30px 0 rgba(241, 104, 86, 0.3);
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.person h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #3c3c3c;
+}
+
+
+
+.menu {
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.menu .nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu .nav li {
+    display: block;
+    padding: 0;
+    transition: all 0.25s ease-in-out;
+    -webkit-transition: all 0.25s ease-in-out;
+    -moz-transition: all 0.25s ease-in-out;
+    -ms-transition: all 0.25s ease-in-out;
+    -o-transition: all 0.25s ease-in-out;
+}
+
+.menu .nav li a {
+    display: block;
+    padding: 10px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #3c3c3c;
+    border-left: 3px solid transparent;
+    background-color: transparent;
+}
+
+.menu .nav li:hover a {
+    border-left: 3px solid #F2494F;
+    color: #F2494F;
+    background-color: #ffebe8;
+}
+
+
+
+.footer {
+    display: flex;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer .social-links {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.social-links ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.social-links ul li {
+    display: inline-block;
+    margin: 0 3px;
+}
+
+.social-links ul li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #F16856;
+    color: #FFFFFF;
+    border-radius: 50%;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.social-links ul li:hover a {
+    background-color: #F2494F;
+    transform: translateY(-1px);
+    -webkit-transform: translateY(-1px);
+    -moz-transform: translateY(-1px);
+    -ms-transform: translateY(-1px);
+    -o-transform: translateY(-1px);
+}
+
+
+.footer h6 {
+    font-size: 0.9rem;
+    color: #3c3c3c;
+    font-weight: 400;
+    padding: 15px 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*================================================================
+========================= 04. Main Page CSS ======================
+================================================================*/
+.page-area {
+    padding-left: 320px;
+}
+
+
+/**
+ * Home Hero Section
+ */
+.page-area #home {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
+    padding: 120px 60px;
+    background-color: #EFF3F8;
+    z-index: 1;
+}
+
+.page-area #home::after {
+    display: flex;
+    content: 'creative';
+    clear: both;
+    z-index: -1;
+    justify-content: center;
+    position: absolute;
+    bottom: 5%;
+    left: 0;
+    width: 100%;
+    color: #8c8c8c;
+    opacity: 0.1;
+    font-size: 8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+}
+
+#home .hero-left {
+    display: flex;
+    width: 45%;
+    min-width: 45%;
+    flex-direction: column;
+}
+
+#home .hero-left .btn {
+    flex-flow: nowrap;
+}
+
+#home .hero-right {
+    display: flex;
+    width: 55%;
+    min-width: 55%;
+    justify-content: flex-end;
+    align-self: start;
+}
+
+.hero-right .img-wrap {
+    position: relative;
+    max-width: 500px;
+    text-align: right;
+    z-index: -1;
+}
+
+.img-wrap::before {
+    display: block;
+    position: absolute;
+    content: '';
+    clear: both;
+    top: -20px;
+    left: -20px;
+    width: 100%;
+    height: 100%;
+    z-index: -2;
+    border: 2px dashed #F16856;
+}
+
+
+/**
+ * About Section
+ */
+#about h4 {
+    font-size: 1.3rem;
+    margin: 20px 0 40px;
+    font-weight: 600;
+}
+
+#about .abt-photo {
+    max-height: 600px;
+    height: auto;
+    overflow-y: hidden;
+}
+
+#about .abt-info {
+    display: block;
+    width: 100%;
+}
+
+#about .wrap {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+#about .wrap .abt-photo {
+    max-width: 400px;
+    max-height: 400px;
+    width: 100%;
+    height: auto;
+}
+
+#about .wrap .abt-info {
+    width: calc(100% - 400px);
+    padding: 0 60px;
+}
+
+#about .wrapping {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+#about .wrapping .left {
+    margin-right: 60px;
+}
+
+#about .wrapping .left, 
+#about .wrapping .right {
+    display: flex;
+    height: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+#about .wrapping li {
+    display: block;
+    list-style: none;
+    color: #3c3c3c;
+    margin: 5px 0;
+}
+
+#about .wrapping li span {
+    font-weight: 700;
+}
+
+#about .abt-tiles {
+    margin: 80px 0 40px; 
+    display: flex;
+    padding-right: 60px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#about .abt-tiles .tile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 50px;
+    background-color: #EFF3F8;
+    color: #5b5b5b;
+    transition: all 0.2s ease-in;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    -ms-transition: all 0.2s ease-in;
+    -o-transition: all 0.2s ease-in;
+}
+
+#about .tile svg {
+    font-size: 3rem;
+}
+
+#about .tile strong {
+    display: inline-block;
+    margin: 10px 0;
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+#about .tile span {
+    font-size: 1.4rem;
+    font-weight: 400;
+    text-transform: capitalize;
+}
+
+#about .tile:hover {
+    background-color: #FFFFFF;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.05);
+}
+
+#about .edex {
+    display: flex;
+    justify-content: flex-start;
+    padding-right: 60px;
+    margin: 60px 0;
+}
+
+.edex .education,
+.edex .expericence {
+    width: 50%;
+}
+
+.edex .education h4,
+.edex .expericence h4 {
+    font-weight: 600;
+}
+
+.expericence {
+    padding-left: 5px;
+}
+.education {
+    padding-right: 5px;
+}
